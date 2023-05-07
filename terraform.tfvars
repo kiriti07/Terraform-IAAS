@@ -1,5 +1,0 @@
-aws_access_key = "AKIASXQCLADLJXKMPIWO"
-aws_secret_key = "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"
-region         = "us-east-1"
-ami_id         = "ami-016eb5d644c333ccb"
-instance_type  = "t2.micro"
