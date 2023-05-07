@@ -4,7 +4,7 @@ provider "aws" {
   region     = var.region
 }
 
-resource "aws_instance" "example_instance_1" {
+resource "aws_instance" "App" {
   ami           = var.ami_id
   instance_type = var.instance_type
 
@@ -13,7 +13,7 @@ resource "aws_instance" "example_instance_1" {
   }
 }
 
-resource "aws_instance" "example_instance_2" {
+resource "aws_instance" "Web" {
   ami           = var.ami_id
   instance_type = var.instance_type
 

@@ -8,12 +8,12 @@ variable "aws_secret_key" {
 
 variable "region" {
   description = "AWS region"
-  default     = "us-west-2"
+  default     = "us-east-1"
 }
 
 variable "ami_id" {
   description = "AMI ID"
-  default     = "ami-0c55b159cbfafe1f0"
+  default     = "ami-016eb5d644c333ccb"
 }
 
 variable "instance_type" {
