@@ -35,5 +35,3 @@ pipeline {
                 //sh 'terraform destroy -auto-approve -var-file=terraform.tfvars'
             }
         }
-    }
-}
