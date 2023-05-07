@@ -18,7 +18,7 @@ pipeline {
             steps {
                 //withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                    // sh 'terraform plan -out=tfplan -var-file=terraform.tfvars'
-		   sh 'terraform init'
+                   sh 'terraform init'
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Cleanup') {
             steps {
-		echo 'EC2 Instance is Successfully Deployed'
+                echo 'EC2 Instance is Successfully Deployed'
                 //sh 'terraform destroy -auto-approve -var-file=terraform.tfvars'
             }
         }
