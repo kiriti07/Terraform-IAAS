@@ -11,6 +11,7 @@ pipeline {
         }
         stage('Initialize') {
             steps {
+		sh 'cd /home/ec2-user/Terraform-IAAS/terraform'
                 sh 'terraform init'
             }
         }
@@ -18,12 +19,14 @@ pipeline {
             steps {
                 //withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                    // sh 'terraform plan -out=tfplan -var-file=terraform.tfvars'
+		   sh '/home/ec2-user/Terraform-IAAS/terraform'
                    sh 'terraform init'
                 }
             }
         stage('Apply') {
             steps {
                 //withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+		    sh '/home/ec2-user/Terraform-IAAS/terraform'
                     sh 'terraform apply -auto-approve tfplan'
                 }
             }
