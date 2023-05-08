@@ -20,19 +20,7 @@ pipeline {
                 //withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                    // sh 'terraform plan -out=tfplan -var-file=terraform.tfvars'
 		   //sh '/home/ec2-user/Terraform-IAAS/terraform'
-                   //sh 'terraform plan'
-		 def buildDuration = 'less than 5 minutes'
-
-        // Run the build step with a timeout of 5 minutes
-        	timeout(time: 5, unit: 'MINUTES') {
-          	sh 'terraform plan'
-        	}
-        	catchError {
-          // The build step failed or timed out, so set the buildDuration value
-          	buildDuration = 'more than 5 minutes'
-        	}
-
-        	echo "Build duration was ${buildDuration}"
+                   sh 'terraform plan'
                 	}
             	}
         stage('Apply') {
