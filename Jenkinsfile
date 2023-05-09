@@ -1,10 +1,4 @@
 pipeline {
-	
-    environment {
-	     AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
-	     AWS_SECRET_KEY_ID = credentials('AWS_SECRET_KEY_ID')
-    }
-	
     agent any
     stages {
         stage('Checkout') {
@@ -15,7 +9,7 @@ pipeline {
         stage('Initialize') {
             steps {
 		//sh 'cd /home/ec2-user/Terraform-IAAS/terraform'
-                sh 'terraform init'
+                sh 'terraform init -upgrade'
             }
         }
         stage('Plan') {
