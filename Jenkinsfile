@@ -17,7 +17,7 @@ pipeline {
                 //withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                    // sh 'terraform plan -out=tfplan -var-file=terraform.tfvars'
 		   //sh '/home/ec2-user/Terraform-IAAS/terraform'
-                   sh 'terraform plan'
+                   sh 'terraform plan -debug >> terraform.log'
                 	}
             	}
         stage('Apply') {
