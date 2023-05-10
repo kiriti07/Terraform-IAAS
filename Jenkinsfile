@@ -9,7 +9,7 @@ pipeline {
         stage('Initialize') {
             steps {
 		//sh 'cd /home/ec2-user/Terraform-IAAS/terraform'
-                sh 'terraform init'
+                sh 'terraform init -reconfigure'
             }
         }
         stage('Plan') {
